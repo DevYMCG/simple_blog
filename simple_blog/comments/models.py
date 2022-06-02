@@ -13,7 +13,7 @@ class Comment(models.Model):
     """Comment model."""
 
     user = models.ForeignKey(User, on_delete=models.PROTECT)
-    profile = models.models.ForeignKey('users.profile', on_delete=models.PROTECT )
+    profile = models.ForeignKey('users.profile', on_delete=models.PROTECT )
     post = models.ForeignKey(Post, on_delete=models.PROTECT)
     comment = models.CharField(max_length=5000)
 

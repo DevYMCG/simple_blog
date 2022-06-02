@@ -9,7 +9,7 @@ class Post(models.Model):
     """Post Model."""
 
     user = models.ForeignKey(User, on_delete=models.PROTECT)
-    profile = models.ForeignKey('Users.profile', on_delete=models.PROTECT)
+    profile = models.ForeignKey('users.profile', on_delete=models.PROTECT)
 
     title = models.CharField(max_length=255)
     image_header = models.ImageField(upload_to = 'posts/photos')
@@ -23,7 +23,7 @@ class Post(models.Model):
     categories = models.ManyToManyField(Category)
 
     class Meta:
-        ordering = ('Title',)
+        ordering = ('title',)
 
     def __str__(self):
         """Return title and username"""
